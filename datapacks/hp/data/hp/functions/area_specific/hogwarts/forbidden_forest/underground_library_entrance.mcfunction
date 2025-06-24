@@ -1,4 +1,4 @@
-# This is the block animation
+# Esta é a animação do bloco
 execute if score undergroundLibraryEntranceDirection global matches 1 if score undergroundLibraryEntrance global matches 2 run playsound minecraft:custom.fx.wood_creak master @a 57 16 -11 5 1
 execute if score undergroundLibraryEntranceDirection global matches 1 if score undergroundLibraryEntrance global matches 4 run particle minecraft:falling_dust gravel 57 16.5 -11 0.7 0 0.7 0.1 20 force
 
@@ -92,6 +92,6 @@ execute if score undergroundLibraryEntrance global matches 12 run setblock 58 14
 	
 execute if score undergroundLibraryEntranceDirection global matches 0 if score undergroundLibraryEntrance global matches 10 run playsound minecraft:custom.fx.wood_creak master @a 57 16 -11 5 1
 
-# Direction
+# Direção
 execute if score undergroundLibraryEntranceDirection global matches 1 unless score undergroundLibraryEntrance global matches 14.. run scoreboard players add undergroundLibraryEntrance global 1
 execute if score undergroundLibraryEntranceDirection global matches 0 unless score undergroundLibraryEntrance global matches ..-2 run scoreboard players remove undergroundLibraryEntrance global 1

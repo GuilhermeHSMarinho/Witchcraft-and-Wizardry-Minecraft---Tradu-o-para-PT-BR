@@ -1,5 +1,5 @@
-# Enter anim
-# When the player selects their wand
+# Animação de entrada
+# Quando o jogador seleciona sua varinha
 
 
 execute as @s[tag=!anim_playing,tag=anim_playingEnter] run tag @s add anim_playing

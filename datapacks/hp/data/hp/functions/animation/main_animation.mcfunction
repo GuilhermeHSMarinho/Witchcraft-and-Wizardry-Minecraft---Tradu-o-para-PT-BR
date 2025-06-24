@@ -1,14 +1,14 @@
-# Decay
+# Decadência
 scoreboard players remove @s[scores={animTest=1..}] animTest 1
 
-# Enter 
+# Entrar
 execute as @s[scores={animState=0},tag=!anim_playing,tag=anim_enter,tag=!anim_playingEnter] run scoreboard players set @s animTest 16
 execute as @s[scores={animState=0},tag=!anim_playing,tag=anim_enter,tag=!anim_playingEnter] run tag @s add anim_playingEnter
 execute as @s[scores={animState=4},tag=!anim_playing,tag=anim_enter,tag=!anim_playingEnter] run scoreboard players set @s animTest 16
 execute as @s[scores={animState=4},tag=!anim_playing,tag=anim_enter,tag=!anim_playingEnter] run tag @s add anim_playingEnter
 execute as @s[tag=anim_playingEnter] run function hp:animation/wand_anim/enter
 
-# Stupefy
+# Estupefação
 execute as @s[scores={animState=0},tag=!anim_playing,tag=anim_stupefy,tag=!anim_playingStupefy] run scoreboard players set @s animTest 23
 execute as @s[scores={animState=0},tag=!anim_playing,tag=anim_stupefy,tag=!anim_playingStupefy] run tag @s add anim_playingStupefy
 execute as @s[tag=anim_playingStupefy] run function hp:animation/wand_anim/stupefy

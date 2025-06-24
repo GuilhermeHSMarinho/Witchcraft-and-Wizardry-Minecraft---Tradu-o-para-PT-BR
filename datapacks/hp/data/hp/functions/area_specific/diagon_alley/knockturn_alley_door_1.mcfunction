@@ -1,4 +1,4 @@
-# This is the block animation for door 1
+# Esta é a animação de bloco para a porta 1
 execute if score knockturnAlleyDoor1Direction global matches 1 if score knockturnAlleyDoor1 global matches 2 run playsound minecraft:custom.fx.metal_door_open master @a 2802 35 1025 2 1
 
 execute if score knockturnAlleyDoor1 global matches 2 run fill 2802 34 1024 2802 37 1026 air

@@ -1,4 +1,4 @@
-# This is the block animation for door 1
+# Esta é a animação de bloco para a porta 1
 execute if score hufflepuffEntranceDirection global matches 1 if score hufflepuffEntrance global matches 2 run playsound minecraft:custom.fx.wood_creak master @a 811 27 132 5 1
 
 execute if score hufflepuffEntrance global matches 2 run fill 811 25 129 811 30 132 air
@@ -73,6 +73,6 @@ execute if score hufflepuffEntrance global matches 12 run setblock 811 30 132 mi
 
 execute if score hufflepuffEntranceDirection global matches 0 if score hufflepuffEntrance global matches 12 run playsound minecraft:custom.fx.wood_creak master @a 811 27 132 1
 
-# Direction
+# direção
 execute if score hufflepuffEntranceDirection global matches 1 unless score hufflepuffEntrance global matches 12.. run scoreboard players add hufflepuffEntrance global 1
 execute if score hufflepuffEntranceDirection global matches 0 unless score hufflepuffEntrance global matches ..-5 run scoreboard players remove hufflepuffEntrance global 1

@@ -1,4 +1,4 @@
-# This is the block animation for door 1
+# Esta é a animação de bloco para a porta 1
 execute if score hogwartsPuzzleDoor1Direction global matches 1 if score hogwartsPuzzleDoor1 global matches 2 run playsound minecraft:custom.fx.metal_door_open master @a 792 72 141 2 1
 
 execute if score hogwartsPuzzleDoor1 global matches 2 run fill 795 71 141 790 74 141 minecraft:iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]
@@ -42,6 +42,6 @@ execute if score hogwartsPuzzleDoor1 global matches 13 run fill 795 71 141 790 7
 
 execute if score hogwartsPuzzleDoor1Direction global matches 0 if score hogwartsPuzzleDoor1 global matches 13 run playsound minecraft:custom.fx.metal_door_close master @a 792 72 141 2 1
 
-# Direction
+# Direção
 execute if score hogwartsPuzzleDoor1Direction global matches 1 unless score hogwartsPuzzleDoor1 global matches 15.. run scoreboard players add hogwartsPuzzleDoor1 global 1
 execute if score hogwartsPuzzleDoor1Direction global matches 0 unless score hogwartsPuzzleDoor1 global matches ..-2 run scoreboard players remove hogwartsPuzzleDoor1 global 1

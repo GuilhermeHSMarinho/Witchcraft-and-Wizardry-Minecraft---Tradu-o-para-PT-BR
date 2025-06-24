@@ -1,7 +1,7 @@
-# Stop sound
+# Parar o som
 execute unless score @s ambiencePlaying = @s ambientSound run stopsound @s ambient
 
-# Fade
+# Desvanecer
 execute unless score @s ambiencePlaying = @s ambientSound as @s[scores={ambiencePlaying=0}] at @s run playsound minecraft:custom.ambient.privet_drive.interior_fade ambient @s
 execute unless score @s ambiencePlaying = @s ambientSound as @s[scores={ambiencePlaying=1}] at @s run playsound minecraft:custom.ambient.privet_drive.exterior_fade ambient @s
 execute unless score @s ambiencePlaying = @s ambientSound as @s[scores={ambiencePlaying=2}] at @s run playsound minecraft:custom.ambient.london.london_fade ambient @s
@@ -40,7 +40,7 @@ execute unless score @s ambiencePlaying = @s ambientSound as @s[scores={ambience
 execute unless score @s ambiencePlaying = @s ambientSound as @s[scores={ambiencePlaying=35}] at @s run playsound minecraft:custom.ambient.azkaban.azkaban_storm_fade ambient @s
 
 
-# Play ambient sound and set duration
+# Reproduzir som ambiente e definir a duração
 execute as @s[scores={ambientSound=0}] at @s run playsound minecraft:custom.ambient.privet_drive.interior ambient @s ~ ~ ~ 1000000 1 1
 execute as @s[scores={ambientSound=0}] run scoreboard players set @s ambientTime 48000
 

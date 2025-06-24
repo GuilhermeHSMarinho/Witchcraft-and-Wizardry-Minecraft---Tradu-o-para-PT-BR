@@ -1,4 +1,4 @@
-# Moving target 1
+# Alvo móvel 1
 execute if score hogwartsPuzzle14Target1 global matches 1 run tp bc9105c3-bb6b-42d5-a714-661b7de9b6ba 672 113.0 60
 execute if score hogwartsPuzzle14Target1 global matches 2 run tp bc9105c3-bb6b-42d5-a714-661b7de9b6ba 672 112.9 60
 execute if score hogwartsPuzzle14Target1 global matches 3 run tp bc9105c3-bb6b-42d5-a714-661b7de9b6ba 672 112.8 60
@@ -26,7 +26,7 @@ execute if score hogwartsPuzzle14Target1 global matches ..0 run scoreboard playe
 execute if score hogwartsPuzzle14Target1Direction global matches 1 run scoreboard players add hogwartsPuzzle14Target1 global 1
 execute if score hogwartsPuzzle14Target1Direction global matches 0 run scoreboard players remove hogwartsPuzzle14Target1 global 1
 
-# Moving target 2
+# Alvo móvel 2
 execute if score hogwartsPuzzle14Target2 global matches 1 run tp 53356a38-d323-480b-9fb7-96b7f1b3dde5 666 113.0 60
 execute if score hogwartsPuzzle14Target2 global matches 2 run tp 53356a38-d323-480b-9fb7-96b7f1b3dde5 666 112.9 60
 execute if score hogwartsPuzzle14Target2 global matches 3 run tp 53356a38-d323-480b-9fb7-96b7f1b3dde5 666 112.8 60
@@ -54,7 +54,7 @@ execute if score hogwartsPuzzle14Target2 global matches ..0 run scoreboard playe
 execute if score hogwartsPuzzle14Target2Direction global matches 1 run scoreboard players add hogwartsPuzzle14Target2 global 1
 execute if score hogwartsPuzzle14Target2Direction global matches 0 run scoreboard players remove hogwartsPuzzle14Target2 global 1
 
-# Moving target 3
+# Alvo móvel 3
 execute if score hogwartsPuzzle14Target3 global matches 1 run tp aa5c3810-4db3-4bdc-8213-3885596ff9ad 661 108.0 70
 execute if score hogwartsPuzzle14Target3 global matches 2 run tp aa5c3810-4db3-4bdc-8213-3885596ff9ad 661 107.9 70
 execute if score hogwartsPuzzle14Target3 global matches 3 run tp aa5c3810-4db3-4bdc-8213-3885596ff9ad 661 107.8 70
@@ -92,7 +92,7 @@ execute if score hogwartsPuzzle14Target3 global matches ..0 run scoreboard playe
 execute if score hogwartsPuzzle14Target3Direction global matches 1 run scoreboard players add hogwartsPuzzle14Target3 global 1
 execute if score hogwartsPuzzle14Target3Direction global matches 0 run scoreboard players remove hogwartsPuzzle14Target3 global 1
 
-# Moving target 4
+# Alvo móvel 4
 execute if score hogwartsPuzzle14Target4 global matches 1 run tp 98dfb085-5996-4567-b09f-bb1cda2081f7 661 108.0 66
 execute if score hogwartsPuzzle14Target4 global matches 2 run tp 98dfb085-5996-4567-b09f-bb1cda2081f7 661 107.9 66
 execute if score hogwartsPuzzle14Target4 global matches 3 run tp 98dfb085-5996-4567-b09f-bb1cda2081f7 661 107.8 66
@@ -131,19 +131,19 @@ execute if score hogwartsPuzzle14Target4Direction global matches 1 run scoreboar
 execute if score hogwartsPuzzle14Target4Direction global matches 0 run scoreboard players remove hogwartsPuzzle14Target4 global 1
 
 
-# Trapdoor 1
+# Alçapão 1
 execute if score hogwartsPuzzle14Trapdoor1 global matches 1 run playsound minecraft:custom.fx.impact master @a 670 115 70
 execute if score hogwartsPuzzle14Trapdoor1 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 670 115 70
 execute if score hogwartsPuzzle14Trapdoor1 global matches 1 run fill 667 115 71 668 115 70 air destroy
 execute if score hogwartsPuzzle14Trapdoor1 global matches 1 run scoreboard players set hogwartsPuzzle14Trapdoor1 global 2
 
-# Trapdoor 2
+# Alçapão 2
 execute if score hogwartsPuzzle14Trapdoor2 global matches 1 run playsound minecraft:custom.fx.impact master @a 670 115 70
 execute if score hogwartsPuzzle14Trapdoor2 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 670 115 70
 execute if score hogwartsPuzzle14Trapdoor2 global matches 1 run fill 671 115 71 670 115 70 air destroy
 execute if score hogwartsPuzzle14Trapdoor2 global matches 1 run scoreboard players set hogwartsPuzzle14Trapdoor2 global 2
 
-# Trapdoor 3
+# Alçapão 3
 execute if score hogwartsPuzzle14Trapdoor3 global matches 1 run playsound minecraft:custom.fx.impact master @a 670 115 66
 execute if score hogwartsPuzzle14Trapdoor3 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 670 115 66
 execute if score hogwartsPuzzle14Trapdoor3 global matches 1 run fill 671 115 65 670 115 66 air destroy
@@ -155,19 +155,19 @@ execute if score hogwartsPuzzle14Trapdoor4 global matches 1 run playsound minecr
 execute if score hogwartsPuzzle14Trapdoor4 global matches 1 run fill 671 110 66 672 110 67 air destroy
 execute if score hogwartsPuzzle14Trapdoor4 global matches 1 run scoreboard players set hogwartsPuzzle14Trapdoor4 global 2
 
-# Trapdoor 5
+# Alçapão 5
 execute if score hogwartsPuzzle14Trapdoor5 global matches 1 run playsound minecraft:custom.fx.impact master @a 667 110 67
 execute if score hogwartsPuzzle14Trapdoor5 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 667 110 67
 execute if score hogwartsPuzzle14Trapdoor5 global matches 1 run fill 666 110 66 667 110 67 air destroy
 execute if score hogwartsPuzzle14Trapdoor5 global matches 1 run scoreboard players set hogwartsPuzzle14Trapdoor5 global 2
 
-# Trapdoor 6
+# Alçapão 6
 execute if score hogwartsPuzzle14Trapdoor6 global matches 1 run playsound minecraft:custom.fx.impact master @a 667 105 67
 execute if score hogwartsPuzzle14Trapdoor6 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 667 105 67
 execute if score hogwartsPuzzle14Trapdoor6 global matches 1 run fill 668 105 66 667 105 67 air destroy
 execute if score hogwartsPuzzle14Trapdoor6 global matches 1 run scoreboard players set hogwartsPuzzle14Trapdoor6 global 2
 
-# Trapdoor 7
+# Alçapão 7
 execute if score hogwartsPuzzle14Trapdoor7 global matches 1 run playsound minecraft:custom.fx.impact master @a 668 105 70
 execute if score hogwartsPuzzle14Trapdoor7 global matches 1 run playsound minecraft:custom.fx.wood_creak master @a 668 105 70
 execute if score hogwartsPuzzle14Trapdoor7 global matches 1 run fill 667 105 69 668 105 70 air destroy

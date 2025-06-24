@@ -1,1 +1,1 @@
-I've split the animations into so many functions to optimise performance as much as possible
+Dividi as animações em várias funções para otimizar o desempenho o máximo possível

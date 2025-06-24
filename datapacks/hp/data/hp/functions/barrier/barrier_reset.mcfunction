@@ -1,5 +1,5 @@
-# Normal barrier reset based on distance
+# Reinicialização normal da barreira com base na distância
 execute as @s[scores={overrideRespawn=0}] run function hp:barrier/barrier_reset_normal
 
-# Override respawn determined by quests / callenges
+# Substituir o respawn determinado por missões / desafios
 execute as @s[scores={overrideRespawn=1..}] run function hp:respawn/respawn_override

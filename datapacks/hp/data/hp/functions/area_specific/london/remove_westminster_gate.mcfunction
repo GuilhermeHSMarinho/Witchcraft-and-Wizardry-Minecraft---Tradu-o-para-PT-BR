@@ -5,13 +5,13 @@ summon area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:1000,Particle:"block air",T
 
 ### Remove Barier ###
 
-#First Segment
+#Primeiro segmento
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 2814 558 1 1 false @s
 fill 2815 54 559 2815 56 559 minecraft:air
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 2816 558 1 1 false @s
 fill 2816 54 559 2828 56 559 minecraft:air
 
-#Second Segment
+#Segundo segmento
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 2837 558 1 1 false @s
 fill 2837 56 559 2841 54 559 minecraft:air
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 2841 561 1 1 false @s

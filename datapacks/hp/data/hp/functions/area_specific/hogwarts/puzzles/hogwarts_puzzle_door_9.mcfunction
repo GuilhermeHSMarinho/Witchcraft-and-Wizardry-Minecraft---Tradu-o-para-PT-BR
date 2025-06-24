@@ -7,7 +7,7 @@ execute if score hogwartsPuzzleDoor9switch3 global matches 0 run scoreboard play
 execute if score hogwartsPuzzleDoor9switch1 global matches 1 if score hogwartsPuzzleDoor9switch2 global matches 1 if score hogwartsPuzzleDoor9switch3 global matches 1 run scoreboard players set hogwartsPuzzleDoor9Direction global 1
 
 
-# This is the block animation for door 1
+# Esta é a animação de bloco para a porta 1
 execute if score hogwartsPuzzleDoor9Direction global matches 1 if score hogwartsPuzzleDoor9 global matches 2 run playsound minecraft:custom.fx.metal_door_open master @a 767 52 171 2 1
 
 execute if score hogwartsPuzzleDoor9 global matches 2 run fill 766 51 171 768 53 171 minecraft:iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]
@@ -24,6 +24,6 @@ execute if score hogwartsPuzzleDoor9 global matches 12 run fill 766 51 171 768 5
 
 execute if score hogwartsPuzzleDoor9Direction global matches 0 if score hogwartsPuzzleDoor9 global matches 12 run playsound minecraft:custom.fx.metal_door_close master @a 767 52 171 2 1
 
-# Direction
+# Direção
 execute if score hogwartsPuzzleDoor9Direction global matches 1 unless score hogwartsPuzzleDoor9 global matches 14.. run scoreboard players add hogwartsPuzzleDoor9 global 1
 execute if score hogwartsPuzzleDoor9Direction global matches 0 unless score hogwartsPuzzleDoor9 global matches ..-2 run scoreboard players remove hogwartsPuzzleDoor9 global 1

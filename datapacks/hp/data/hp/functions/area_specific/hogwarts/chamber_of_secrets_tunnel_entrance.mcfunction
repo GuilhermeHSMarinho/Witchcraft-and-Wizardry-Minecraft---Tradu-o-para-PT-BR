@@ -1,4 +1,4 @@
-# This is the block animation for door 1
+# Esta é a animação de bloco para a porta 1
 execute if score chamberOfSecretTunnelsEntranceDirection global matches 1 if score chamberOfSecretTunnelsEntrance global matches -8 run playsound minecraft:custom.fx.chamber_of_secrets.open master @a 793 53 152 2 1.2
 
 execute if score chamberOfSecretTunnelsEntrance global matches 6 run playsound minecraft:custom.fx.rocks_move_short master @a 793 53 152 2
@@ -38,6 +38,6 @@ execute if score chamberOfSecretTunnelsEntrance global matches 60 run fill 802 6
 
 execute if score chamberOfSecretTunnelsEntranceDirection global matches 0 if score chamberOfSecretTunnelsEntrance global matches 68 run playsound minecraft:custom.fx.chamber_of_secrets.open master @a 793 53 152 2 1.2
 
-# Direction
+# Direção
 execute if score chamberOfSecretTunnelsEntranceDirection global matches 1 unless score chamberOfSecretTunnelsEntrance global matches 70.. run scoreboard players add chamberOfSecretTunnelsEntrance global 1
 execute if score chamberOfSecretTunnelsEntranceDirection global matches 0 unless score chamberOfSecretTunnelsEntrance global matches ..-10 run scoreboard players remove chamberOfSecretTunnelsEntrance global 1

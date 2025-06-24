@@ -1,10 +1,10 @@
-# Determine what ambient sound to play depending on the players position. For performance reasons this is executed every 5 ticks. - 4 times per second.
+# Determina qual som ambiente tocar dependendo da posição do jogador. Por motivos de desempenho, isso é executado a cada 5 ticks - 4 vezes por segundo.
 
 ##############
-## Ambience ##
+## Ambiência ##
 ##############
 
-# This is also used to test if the player is inside, which will prevent them from flying
+# Isso também é usado para testar se o jogador está dentro de um local, o que impedirá que ele voe
 tag @s remove playerIsOutside
 
 execute as @s[scores={lastRegion=1}] run function hp:ambience/performance/check_soundscape_hogwarts

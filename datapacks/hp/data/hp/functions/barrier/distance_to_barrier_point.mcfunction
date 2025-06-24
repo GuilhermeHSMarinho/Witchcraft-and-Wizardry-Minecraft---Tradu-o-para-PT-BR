@@ -1,38 +1,38 @@
-# Copied from respawn system
+# Copiado do sistema de respawn
 
 ######################
-# Determine distance #
+# Determinar a distância
 ######################
-# I do distance^2 = x^2+y^2+z^2. No need to do the square root, since i'm only checking which is smallest
+# Eu faço distance^2 = x^2+y^2+z^2. Não há necessidade de fazer a raiz quadrada, pois estou apenas verificando qual é a menor
 
 #####
 # X #
 #####
 
-# if spawnpoint x is greater than player x
+# Se o ponto de desova x for maior que o jogador x
 execute if score @s playerRespawnX >= @s respawnX run scoreboard players operation @s tmp = @s playerRespawnX
 execute if score @s playerRespawnX >= @s respawnX run scoreboard players operation @s tmp -= @s respawnX
 
-# if spawnpoint x is less than player x
+# Se o ponto de desova x for menor que o jogador x
 execute if score @s playerRespawnX < @s respawnX run scoreboard players operation @s tmp = @s respawnX
 execute if score @s playerRespawnX < @s respawnX run scoreboard players operation @s tmp -= @s playerRespawnX
 
-# Pythagoras
+# Pitágoras
 scoreboard players operation @s tmp *= @s tmp
 
 #####
 # Y #
 #####
 
-# if spawnpoint y is greater than player y
+# se o ponto de desova y for maior que o jogador y
 execute if score @s playerRespawnY >= @s respawnY run scoreboard players operation @s tmp2 = @s playerRespawnY
 execute if score @s playerRespawnY >= @s respawnY run scoreboard players operation @s tmp2 -= @s respawnY
 
-# if spawnpoint y is less than player y
+# se o ponto de desova y for menor que o jogador y
 execute if score @s playerRespawnY < @s respawnY run scoreboard players operation @s tmp2 = @s respawnY
 execute if score @s playerRespawnY < @s respawnY run scoreboard players operation @s tmp2 -= @s playerRespawnY
 
-# Pythagoras
+# Pitágoras
 scoreboard players operation @s tmp2 *= @s tmp2
 scoreboard players operation @s tmp += @s tmp2
 
@@ -40,7 +40,7 @@ scoreboard players operation @s tmp += @s tmp2
 # Z #
 #####
 
-# if spawnpoint z is greater than player z
+# se o ponto de desova z for maior que o jogador z
 execute if score @s playerRespawnZ >= @s respawnZ run scoreboard players operation @s tmp3 = @s playerRespawnZ
 execute if score @s playerRespawnZ >= @s respawnZ run scoreboard players operation @s tmp3 -= @s respawnZ
 
@@ -48,17 +48,17 @@ execute if score @s playerRespawnZ >= @s respawnZ run scoreboard players operati
 execute if score @s playerRespawnZ < @s respawnZ run scoreboard players operation @s tmp3 = @s respawnZ
 execute if score @s playerRespawnZ < @s respawnZ run scoreboard players operation @s tmp3 -= @s playerRespawnZ
 
-# Pythagoras
+# Pitágoras
 scoreboard players operation @s tmp3 *= @s tmp3
 scoreboard players operation @s tmp += @s tmp3
 
-# If this is the first point being tested assume it's the one that will be used
+# Se este for o primeiro ponto a ser testado, presuma que é o que será usado
 execute as @s[scores={testRespawnID=0}] run scoreboard players operation @s respawnID = @s testRespawnID
 execute as @s[scores={testRespawnID=0}] run scoreboard players operation @s respawnDistance = @s tmp
 
-# If the new tested point is closer to the player than the previously closets point replace it
+# Se o novo ponto testado estiver mais próximo do jogador do que o ponto anteriormente mais próximo, substitua-o
 execute as @s[scores={testRespawnID=1..}] if score @s tmp < @s respawnDistance run scoreboard players operation @s respawnID = @s testRespawnID
 execute as @s[scores={testRespawnID=1..}] if score @s tmp < @s respawnDistance run scoreboard players operation @s respawnDistance = @s tmp
 
-# Test next respawn Point
+# Testar próximo ponto de respawn
 scoreboard players add @s testRespawnID 1

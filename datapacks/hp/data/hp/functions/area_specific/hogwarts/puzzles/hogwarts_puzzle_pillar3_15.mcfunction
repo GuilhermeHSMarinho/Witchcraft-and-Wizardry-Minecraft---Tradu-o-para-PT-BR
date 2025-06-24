@@ -1,4 +1,4 @@
-# This is the block animation for stair 1
+# Esta é a animação de bloco para a escada 1
 execute if score hogwartsPuzzle15Pillar3 global matches 2 run playsound minecraft:custom.fx.rocks_move_short master @a 704 4 -25 3 1
 execute if score hogwartsPuzzle15Pillar3Direction global matches 1 if score hogwartsPuzzle15Pillar31 global matches 2 run playsound minecraft:custom.fx.stone_slide master @a 704 4 -25 3 1
 
@@ -23,6 +23,6 @@ execute if score hogwartsPuzzle15Pillar3 global matches 2 run clone 703 37 -26 7
 execute if score hogwartsPuzzle15Pillar3Direction global matches 0 if score hogwartsPuzzle15Pillar3 global matches 20 run playsound minecraft:custom.fx.stone_slide master @a 704 4 -25 3 1
 execute if score hogwartsPuzzle15Pillar3 global matches 20 run playsound minecraft:custom.fx.rocks_move_short master @a 704 4 -25 3 1
 
-# Direction
+# Direção
 execute unless entity @p[x=703,y=4,z=-26,dx=2,dy=6,dz=2] if score hogwartsPuzzle15Pillar3Direction global matches 1 unless score hogwartsPuzzle15Pillar3 global matches 25.. run scoreboard players add hogwartsPuzzle15Pillar3 global 1
 execute if score hogwartsPuzzle15Pillar3Direction global matches 0 unless score hogwartsPuzzle15Pillar3 global matches ..-10 run scoreboard players remove hogwartsPuzzle15Pillar3 global 1

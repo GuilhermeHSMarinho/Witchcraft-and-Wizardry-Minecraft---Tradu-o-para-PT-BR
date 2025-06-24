@@ -1,4 +1,4 @@
-# This is the block animation for the room of requirement entrance door
+# Esta é a animação de bloco para a porta de entrada da sala de requisitos
 execute if score gryffindorEntranceDirection global matches 1 if score gryffindorEntrance global matches 2 run playsound minecraft:custom.fx.wood_creak master @a 718 113 307 2 1
 execute if score gryffindorEntranceDirection global matches 1 if score gryffindorEntrance global matches 2 run playsound minecraft:custom.fx.open_door master @a 718 113 307 2 1
 

@@ -1,4 +1,4 @@
-# This is the block animation for the room of requirement entrance door
+# Esta é a animação de bloco para a porta da sala de requisições
 execute if score roomOfRequirementEntranceDirection global matches 1 if score roomOfRequirementEntrance global matches 2 positioned 778 99 104 run stopsound @a[distance=..50] master minecraft:custom.fx.stone_rumble
 execute if score roomOfRequirementEntranceDirection global matches 1 if score roomOfRequirementEntrance global matches 2 run playsound minecraft:custom.fx.stone_rumble master @a 778 99 104 5 1
 
@@ -20,6 +20,6 @@ execute if score roomOfRequirementEntrance global matches 42 run setblock 787 99
 execute if score roomOfRequirementEntranceDirection global matches 0 if score roomOfRequirementEntrance global matches 42 positioned 778 99 104 run stopsound @a[distance=..50] master minecraft:custom.fx.stone_rumble
 execute if score roomOfRequirementEntranceDirection global matches 0 if score roomOfRequirementEntrance global matches 42 run playsound minecraft:custom.fx.stone_rumble master @a 778 99 104 5 1
 
-# Direction
+# Direção
 execute if score roomOfRequirementEntranceDirection global matches 1 unless score roomOfRequirementEntrance global matches 45.. run scoreboard players add roomOfRequirementEntrance global 1
 execute if score roomOfRequirementEntranceDirection global matches 0 unless score roomOfRequirementEntrance global matches ..-10 run scoreboard players remove roomOfRequirementEntrance global 1

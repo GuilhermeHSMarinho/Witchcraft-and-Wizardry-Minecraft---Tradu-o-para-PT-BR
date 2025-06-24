@@ -1,4 +1,4 @@
-# Removes all animations currently running - Used when entering conversation.
+# Remove todas as animações em execução atualmente - Usado ao entrar em uma conversa.
 
 scoreboard players set @s animTest 0
 scoreboard players set @s[tag=!inLumos] animState 0

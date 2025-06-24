@@ -256,7 +256,7 @@ execute as @s[tag=testDistance,scores={testRespawnID=42}] run function hp:barrie
 execute as @s[tag=tpToRespawnPoint,scores={respawnID=42}] run tp @s 684.60 66.00 316.59 201.36 3.34
 
 ##############
-# Residences #
+# Residências #
 ##############
 scoreboard players set @s testRespawnID 43
 execute as @s[tag=testDistance,scores={testRespawnID=43}] run scoreboard players set @s respawnX 5151
@@ -578,7 +578,7 @@ execute as @s[tag=tpToRespawnPoint,scores={respawnID=94}] run tp @s 5540.65 90.5
 
 
 #####################
-# Hogsmeade Station #
+# Hogsmeade Estação #
 #####################
 scoreboard players set @s testRespawnID 95
 execute as @s[tag=testDistance,scores={testRespawnID=95}] run scoreboard players set @s respawnX 624

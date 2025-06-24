@@ -95,7 +95,7 @@ execute as @s[scores={animTest=11},tag=!close] run data merge entity f1ce7364-a3
 execute as @s[scores={animTest=13},tag=close] run fill 9949 197 10098 9949 200 10100 barrier
 execute as @s[scores={animTest=12},tag=!close] run fill 9949 197 10098 9949 200 10100 air
 
-# Sound
+# Som
 execute as @s[scores={animTest=-2},tag=close] run playsound minecraft:custom.gameplay_element.elevator.elevator_1 master @a 9949 196 10099 2 1
 execute as @s[scores={animTest=15},tag=!close] run playsound minecraft:custom.gameplay_element.elevator.elevator_3 master @a 9949 196 10099 2 1
 

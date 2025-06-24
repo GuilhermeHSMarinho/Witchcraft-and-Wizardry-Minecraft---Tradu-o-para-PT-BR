@@ -79,7 +79,7 @@ execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers -104
 fill -97 21 232 -103 21 226 minecraft:purple_stained_glass replace air
 
 
-# Malfoy manor wingardium box because i don't want to put it anywhere else
+# Caixa de wingardium da Mansão Malfoy porque não quero colocá-la em nenhum outro lugar
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 5048 7064 1 1 false @s
 summon armor_stand 5043 84 7070 {Team:"wingardium",NoBasePlate:1b,Pose:{LeftLeg:[180f,0f,0f],RightLeg:[180f,0f,0f],Head:[180f,0f,0f]},Invulnerable:1b,Invisible:1b,Marker:0b,Small:1b,Tags:["wingardiumBoxIsBeingSpawned","spellEntity","interactable","glowable","restorable","wingardium","noInteraction"],DisabledSlots:2039583,ArmorItems:[{},{},{},{id:"minecraft:wooden_sword",Count:1b,tag:{Unbreakable:1b,Damage:49}}],CustomName:"{\"text\":\"WingardiumMoveBlock\"}"}
 execute as @e[tag=wingardiumBoxIsBeingSpawned] store result entity @s ArmorItems[3].tag.sessionID int 1 run scoreboard players operation @s sessionID = global sessionID
@@ -87,7 +87,7 @@ execute as @e[tag=wingardiumBoxIsBeingSpawned] store result entity @s ArmorItems
 execute as @e[tag=wingardiumBoxIsBeingSpawned] run scoreboard players set @s playerID 0
 execute as @e[tag=wingardiumBoxIsBeingSpawned] run tag @s remove wingardiumBoxIsBeingSpawned
 
-# And knockturn alley too
+# E também no beco diagonal
 execute as @e[tag=chunkLoader,limit=1,sort=nearest] at @s run spreadplayers 2744 1000 1 1 false @s
 summon armor_stand 2743 28 992 {Team:"wingardium",NoBasePlate:1b,Pose:{LeftLeg:[180f,0f,0f],RightLeg:[180f,0f,0f],Head:[180f,0f,0f]},Invulnerable:1b,Invisible:1b,Marker:0b,Small:1b,Tags:["wingardiumBoxIsBeingSpawned","spellEntity","interactable","glowable","restorable","wingardium","noInteraction"],DisabledSlots:2039583,ArmorItems:[{},{},{},{id:"minecraft:wooden_sword",Count:1b,tag:{Unbreakable:1b,Damage:49}}],CustomName:"{\"text\":\"WingardiumMoveBlock\"}"}
 execute as @e[tag=wingardiumBoxIsBeingSpawned] store result entity @s ArmorItems[3].tag.sessionID int 1 run scoreboard players operation @s sessionID = global sessionID
