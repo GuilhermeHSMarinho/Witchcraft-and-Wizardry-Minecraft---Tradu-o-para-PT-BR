@@ -18,33 +18,33 @@ execute as @s[scores={delayConvTellraw=1..}] run scoreboard players remove @s de
 scoreboard players set @s npcVoice 5
 
 ################################################################################################
-##################################### Conversation State 0 #############################################
+##################################### Estado da conversa 0 #############################################
 ################################################################################################
 
 tag @s[scores={convState=0},tag=drawOptions] add use
 tag @s[scores={convState=0},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrmh?\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hmm..?\\n\"}"}
 # execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≡ Show me what you have for sale\"}",Tags:["_____buy_____","_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≡ Mostre-me o que você tem para vender\"}",Tags:["_____buy_____","_____Normal_____","_____click_____","convOption","i"]}
 
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau..\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=2}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 2
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState -1
 tag @s remove use
 tag @s remove trg
@@ -53,20 +53,20 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 1 #####################################
+##################################### Estado da conversa 1 #####################################
 ################################################################################################
 
 tag @s[scores={convState=1},tag=drawOptions] add use
 tag @s[scores={convState=1},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrmph. Hrm... The Shrieking Shack, yes. That's what they call that abandoned house down in the valley. They say it's haunted. Codswallop. Although... at times, at night, when it is quiet you can hear strange noises, like screams and laughter coming from the house. Around once a month, you'll hear the howling of a wolf, but this is something else.\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrmph. Hrm... A Casa dos Gritos, sim. É assim que chamam aquela casa abandonada no vale. Dizem que é assombrada. Besteira. Embora... às vezes, à noite, quando está tudo quieto, dá para ouvir barulhos estranhos, como gritos e risadas vindo da casa. Cerca de uma vez por mês, ouve-se o uivo de um lobo, mas isso é outra coisa.\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
@@ -74,10 +74,10 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 0
 tag @s remove use
 tag @s remove trg
@@ -85,34 +85,34 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 2 #############################################
+##################################### Estado da conversa 2 #############################################
 ################################################################################################
 
 tag @s[scores={convState=2},tag=drawOptions] add use
 tag @s[scores={convState=2},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Perhaps someone should investigate. I have never heard noises like this coming from that house. \"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Talvez alguém devesse investigar. Nunca ouvi barulhos assim vindo daquela casa. \"}"}
 # execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"ⁿ I could look into it\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"ⁿ Eu posso investigar\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 3
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=2}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 2
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
@@ -120,24 +120,24 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 3 #############################################
+##################################### Estado da conversa 3 #############################################
 ################################################################################################
 
 tag @s[scores={convState=3},tag=drawOptions] add use
 tag @s[scores={convState=3},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Aye, you could. Might be a stupid thing for a person to do, but I am not one to care or decide what you can and cannot do. If you figure out a way to stop the noises I'll give you something in return. The racket coming from that abandoned house might scare the occasional customer.\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Aye, pode sim. Pode ser uma burrice, mas não sou eu quem vai decidir o que você pode ou não fazer. Se encontrar uma forma de parar os barulhos, te dou algo em troca. A algazarra daquela casa abandonada pode assustar alguns clientes.\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"ⁿ I'll return\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"ⁿ Eu volto depois\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] unless entity @p[tag=queingQuest] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run scoreboard players set theMostHauntedPlaceInBritain sharedQuests 1
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] unless entity @p[tag=queingQuest] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run scoreboard players set theMostHauntedPlaceInBritain p1Quests 1
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] unless entity @p[tag=queingQuest] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run scoreboard players set theMostHauntedPlaceInBritain p2Quests 1
@@ -152,43 +152,43 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] unless ent
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 2
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 4 #############################################
+##################################### Estado da conversa 4 #############################################
 ################################################################################################
 
 tag @s[scores={convState=4},tag=drawOptions] add use
 tag @s[scores={convState=4},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrm. Good. I said I'd give you something in return, so I will. Take this.\\n\\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrm. Bom. Eu disse que te daria algo em troca, então aqui está. Pegue.\\n\\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Thanks (Accept: 150 ≈)\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Obrigado (Aceitar: 150 ≈)\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run tag @s add hasSpokenToAberforthAfterTakingCareOfPoltergeists
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run scoreboard players set @s trackedQuestID 54
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState -1
 tag @s remove use
 tag @s remove trg
@@ -196,33 +196,33 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 5 #############################################
+##################################### Estado da conversa 5 #############################################
 ################################################################################################
 
 tag @s[scores={convState=5},tag=drawOptions] add use
 tag @s[scores={convState=5},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrm. We don't often get letters out here.\\n\\n\\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hrm. Não recebemos muitas cartas por aqui.\\n\\n\\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run tag @s add hasDeliveredLetter
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] run scoreboard players set @s trackedQuestID 52
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 0
 tag @s remove use
 tag @s remove trg
@@ -231,31 +231,31 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 6 #############################################
+##################################### Estado da conversa 6 #############################################
 ################################################################################################
 
 tag @s[scores={convState=6},tag=drawOptions] add use
 tag @s[scores={convState=6},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" You should come back when you've learned some more. Maybe I'll have a task for you then.\\n\\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Você devia voltar quando tiver aprendido um pouco mais. Talvez eu tenha uma tarefa para você então.\\n\\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau..\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 0
 tag @s remove use
 tag @s remove trg

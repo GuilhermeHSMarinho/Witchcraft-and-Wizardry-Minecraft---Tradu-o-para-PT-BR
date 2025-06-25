@@ -18,7 +18,7 @@ execute as @s[scores={playerID=2}] run data merge entity @e[tag=player2Inventory
 execute as @s[scores={playerID=3}] run data merge entity @e[tag=player3Inventory,limit=1] {ArmorItems: [{}, {}, {}, {id: "minecraft:redstone", Count: 1b, tag: {quests.flyingLesson: 1, invItem.MurtlapEssence.count: 3, invItem.PotionOfMagicka.count: 2, invItem.ElixirOfLife.count: 1, invItem.Apple.count: 5, invItem.HouseRobe.count: 1, invItem.HouseScarf.count: 1, invItem.TrousersWithBelt.count: 1, invItem.HogwartsLetter.count: 1, invItem.HogwartsSupplies.count: 1, invItem.HogwartsTicket.count: 1, invItem.FantasticBeasts.count: 1, invItem.StandardBookOfSpells.count: 1, invItem.MagicalDraftsAndPotions.count: 1, invItem.TheDarkForces.count: 1, invItem.GuideToTransfiguration.count: 1}}]}
 execute as @s[scores={playerID=4}] run data merge entity @e[tag=player4Inventory,limit=1] {ArmorItems: [{}, {}, {}, {id: "minecraft:redstone", Count: 1b, tag: {quests.flyingLesson: 1, invItem.MurtlapEssence.count: 3, invItem.PotionOfMagicka.count: 2, invItem.ElixirOfLife.count: 1, invItem.Apple.count: 5, invItem.HouseRobe.count: 1, invItem.HouseScarf.count: 1, invItem.TrousersWithBelt.count: 1, invItem.HogwartsLetter.count: 1, invItem.HogwartsSupplies.count: 1, invItem.HogwartsTicket.count: 1, invItem.FantasticBeasts.count: 1, invItem.StandardBookOfSpells.count: 1, invItem.MagicalDraftsAndPotions.count: 1, invItem.TheDarkForces.count: 1, invItem.GuideToTransfiguration.count: 1}}]}
 
-# Reset quest checking
+# Redefinir a verificação de missões
 function hp:quests/setup_quests
 
 execute as @s[tag=!isDrowning,tag=!stunnedByDarkSpirit,tag=!stunnedByMandrake,tag=!inLumosTransitionArea,scores={trackedQuestID=1..,questQueue=0}] run tag @s remove showingTrackedQuest
@@ -99,10 +99,10 @@ scoreboard players set @s damageOverlay 0
 function hp:misc/update_bossbars
 
 #############
-# Discovery #
+# Descoberta #
 #############
 
-# leaky_cauldron
+# Caldeirão_Furado
 execute as @s[tag=!discovered_leaky_cauldron,tag=!inProperCutScene] run scoreboard players set @s mapLocationID 39
 execute as @s[tag=!discovered_leaky_cauldron,tag=!inProperCutScene] run function hp:map/unlock_location
 scoreboard players set @s[tag=!discovered_leaky_cauldron,tag=!inProperCutScene] discoverLocation 80
