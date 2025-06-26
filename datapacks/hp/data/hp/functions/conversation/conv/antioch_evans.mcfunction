@@ -7,7 +7,7 @@
 # (_____click_____)
 # (_____paper_____)
 
-# On first execution used to set convOverride
+# Na primeira execução, usado para definir convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=1}] run scoreboard players operation @s convState = antiochEvans p1convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=2}] run scoreboard players operation @s convState = antiochEvans p2convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=3}] run scoreboard players operation @s convState = antiochEvans p3convOverride
@@ -18,32 +18,32 @@ execute as @s[scores={delayConvTellraw=1..}] run scoreboard players remove @s de
 scoreboard players set @s npcVoice 0
 
 ################################################################################################
-##################################### Conversation State 0 #####################################
+##################################### Estado da conversa 0 #####################################
 ################################################################################################
 
 tag @s[scores={convState=0},tag=drawOptions] add use
 tag @s[scores={convState=0},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Been cooking fish for near on 30 years now. People say I do good work, and I don't aim to argue with them.\\n\\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Já faz quase 30 anos que cozinho peixe. O pessoal diz que eu mando bem, e não sou eu quem vai discordar. \\n\\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau..\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState -1
 tag @s remove use
 tag @s remove trg
