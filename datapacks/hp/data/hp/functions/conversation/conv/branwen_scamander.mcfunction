@@ -7,7 +7,7 @@
 # (_____click_____)
 # (_____paper_____)
 
-# On first execution used to set convOverride
+# Na primeira execução, usado para definir convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=1}] run scoreboard players operation @s convState = branwenScamander p1convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=2}] run scoreboard players operation @s convState = branwenScamander p2convOverride
 execute as @s[scores={delayConvTellraw=2,playerID=3}] run scoreboard players operation @s convState = branwenScamander p3convOverride
@@ -18,102 +18,102 @@ execute as @s[scores={delayConvTellraw=1..}] run scoreboard players remove @s de
 scoreboard players set @s npcVoice 4
 
 ################################################################################################
-##################################### Conversation State 0 #####################################
+##################################### Estado da conversa 0 #####################################
 ################################################################################################
 
 tag @s[scores={convState=0},tag=drawOptions] add use
 tag @s[scores={convState=0},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Hello there! I'm Branwen Scamander. Feel free to look around, but please be careful with the creatures. And let me know if you have any questions.\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Olá! Eu sou Branwen Scamander. Fique à vontade para olhar tudo, mas por favor, tenha cuidado com as criaturas. E me avise se tiver alguma dúvida!\"}"}
 # execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≤ I have a question about magical creatures\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≤ Eu tenho uma pergunta sobre criaturas mágicas\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 1
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≤ Scamander? Like that old author?\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≤ Scamander? Como aquele velho autor?\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=2}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 2
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=3}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=3}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau..\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=3}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
-scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 3	
+# Número de opções
+scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 3
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState -1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 1 #####################################
+##################################### Estado da conversa 1 #####################################
 ################################################################################################
 
 tag @s[scores={convState=1},tag=drawOptions] add use
 tag @s[scores={convState=1},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" What did you want to ask? \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" O que você queria perguntar? \\n\"}"}
 # execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about nifflers\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os pelúcios.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 3
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about mooncalves\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=2}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os calvelhos\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=2}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 4
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=3}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about murtlaps\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=3}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os murtlaps.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=3}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 5
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=4}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about bowtruckles\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=4}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os tronquilhos.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=4}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 6
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=5}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about pygmy puffs\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=5}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os pigmeus fofos.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=5}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 8
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=6}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about demiguises\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=6}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os demiguises.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=6}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 9
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=7}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about toads\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=7}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os sapos\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=7}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 10
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=8}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about owls\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=8}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre as corujas\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=8}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 11
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=9}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about cats\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=9}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os gatos\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=9}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 12
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=10}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about rabbits\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=10}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os coelhos\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=10}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 13
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=11}] run data merge entity @s {CustomName:"{\"text\":\"≤ Tell me about rats\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=11}] run data merge entity @s {CustomName:"{\"text\":\"≤ Me fale sobre os ratos\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=11}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 14
 
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=12}] run data merge entity @s {CustomName:"{\"text\":\"≥ Goodbye\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=12}] run data merge entity @s {CustomName:"{\"text\":\"≥ Tchau..\"}",Tags:["_____Return_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=12}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState -1
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 12
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 0
 tag @s remove use
 tag @s remove trg
@@ -121,20 +121,20 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 2 #####################################
+##################################### Estado da conversa 2 #####################################
 ################################################################################################
 
 tag @s[scores={convState=2},tag=drawOptions] add use
 tag @s[scores={convState=2},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Why yes, I get that a lot. He taught the whole world about the importance of looking after these creatures, and that's a lesson I want to continue spreading. \\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Ah, sim, escuto isso com frequência. Ele ensinou ao mundo todo a importância de cuidar dessas criaturas, e essa é uma lição que quero continuar espalhando. \\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -142,10 +142,10 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 0
 tag @s remove use
 tag @s remove trg
@@ -153,20 +153,20 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 3 #####################################
+##################################### Estado da conversa 3 #####################################
 ################################################################################################
 
 tag @s[scores={convState=3},tag=drawOptions] add use
 tag @s[scores={convState=3},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" A niffler is a magical creature with a long snout and a coat of black, fluffy fur. They are harmless creatures, though their strong attraction to shiny things can cause them to cause havoc if set loose in the wrong place. \\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Um pelúcio é uma criatura mágica com um focinho longo e pelagem negra e fofinha. São criaturas inofensivas, embora sua forte atração por objetos brilhantes possa causar confusão se forem soltas no lugar errado. \\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -174,30 +174,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 4 #####################################
+##################################### Estado da conversa 4 #####################################
 ################################################################################################
 
 tag @s[scores={convState=4},tag=drawOptions] add use
 tag @s[scores={convState=4},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Estado da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Mooncalves are shy magical creatures that only come out during a full moon. Their mating ritual includes them performing an elaborate dance on their hind legs. This also has the side effect of creating geometric patterns in wheat fields that confuse Muggles. \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" As Calvelhos são criaturas mágicas tímidas que só aparecem durante a lua cheia. Seu ritual de acasalamento inclui uma elaborada dança sobre as patas traseiras. Isso também acaba criando padrões geométricos nos campos de trigo que confundem os trouxas. \\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -205,30 +205,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 5 #####################################
+##################################### Estado da conversa 5 #####################################
 ################################################################################################
 
 tag @s[scores={convState=5},tag=drawOptions] add use
 tag @s[scores={convState=5},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Murtlaps can be pretty aggressive if they aren't tamed. While their bites aren't serious in most cases, some people have a more severe reaction, the first symptoms being flames emitted from the anus, although this lasts for no more than 24 hours. The tentacles growing on their backs can be pickled and are useful in potion brewing. \"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Os murtlaps podem ser bastante agressivos se não forem domados. Embora suas mordidas geralmente não sejam graves, algumas pessoas têm reações mais intensas, sendo o primeiro sintoma chamas saindo do ânus, que duram no máximo 24 horas. Os tentáculos que crescem nas costas deles podem ser conservados em conserva e são úteis na preparação de poções. \"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -236,10 +236,10 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
@@ -247,20 +247,20 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 6 #####################################
+##################################### Estado da conversa 6 #####################################
 ################################################################################################
 
 tag @s[scores={convState=6},tag=drawOptions] add use
 tag @s[scores={convState=6},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" The bowtruckle is a small, insect-eating, tree-dwelling magical creature with the general appearance of a stick with twigs and bark, serving as camouflage in its natural habitat, making it difficult to spot. \\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" O tronquilho é uma pequena criatura mágica que vive em árvores e se alimenta de insetos. Sua aparência lembra um graveto com galhos e casca, funcionando como camuflagem em seu habitat natural, o que dificulta sua localização. \\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -268,10 +268,10 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
@@ -279,20 +279,20 @@ tag @s remove trg
 
 
 ################################################################################################
-##################################### Conversation State 7 #####################################
+##################################### Estado da conversa 7 #####################################
 ################################################################################################
 
 tag @s[scores={convState=7},tag=drawOptions] add use
 tag @s[scores={convState=7},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Bowtruckles usually live in and care for trees whose wood is of wand quality, such as the Wiggentree. The twig-like fingers were well adapted for digging out woodlice in trees and can also be used as a weapon against a foe when aimed at the eyes. A group of bowtruckles is called a branch. \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Os tronquilhos geralmente vivem e cuidam de árvores cuja madeira é de qualidade para varinhas, como o Wiggentree. Seus dedos, que parecem galhos, são perfeitos para cavar e tirar tatuzinhos das árvores, e também podem ser usados como arma, mirando nos olhos do inimigo. Um grupo de tronquilhos é chamado de “ramo”. \\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -300,30 +300,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 6
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 8 #####################################
+##################################### Estado da conversa 8 #####################################
 ################################################################################################
 
 tag @s[scores={convState=8},tag=drawOptions] add use
 tag @s[scores={convState=8},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" A pygmy Puff is a very recent breed of puffskeins. They resemble fluffy balls that roll around, squeak and come in various shades of pink and purple. They are a popular pet amongst young witches and wizards. \\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" O pigmeu fofo é uma raça bem recente de pompomzinhos. Eles parecem bolinhas fofinhas que rolam por aí, fazem barulhinhos e vêm em vários tons de rosa e roxo. São pets muito populares entre jovens bruxas e bruxos. \\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -331,30 +331,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 9 #####################################
+##################################### Estado da conversa 9 #####################################
 ################################################################################################
 
 tag @s[scores={convState=9},tag=drawOptions] add use
 tag @s[scores={convState=9},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" The demiguise is a peaceful, herbivorous magical creature that can make itself invisible and tell the future, which makes it very hard to catch. Demiguise pelts are highly sought after as the hair can be woven into invisibility cloaks. Cloaks made from their hair eventually turn opaque, losing their invisibility effects as time passes. \"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" O demiguise é uma criatura mágica pacífica e herbívora que pode se tornar invisível e prever o futuro, o que a torna muito difícil de capturar. As pelagens de demiguise são muito procuradas, pois os pelos podem ser tecidos em capas de invisibilidade. As capas feitas com seus pelos eventualmente se tornam opacas, perdendo os efeitos de invisibilidade com o tempo. \"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -362,30 +362,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 10 #####################################
+##################################### Estado da conversa 10 #####################################
 ################################################################################################
 
 tag @s[scores={convState=10},tag=drawOptions] add use
 tag @s[scores={convState=10},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" While toads aren't a magical creature and are known among Muggles and wizards and witches alike, toads are popular as a pet in the wizarding world. Toads are one of only a few kinds of animal that the students of Hogwarts are allowed, although they aren't very fashionable. \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Embora sapos não sejam criaturas mágicas e sejam conhecidos tanto por trouxas quanto por bruxos e bruxas, eles são populares como animais de estimação no mundo bruxo. Sapos são um dos poucos tipos de animais que os estudantes de Hogwarts podem ter, embora não sejam muito “na moda”. \\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -393,30 +393,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 11 #####################################
+##################################### Estado da conversa 11 #####################################
 ################################################################################################
 
 tag @s[scores={convState=11},tag=drawOptions] add use
 tag @s[scores={convState=11},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Owls aren't magical creatures and are well known to Muggles, but wizards and witches possess an ability to communicate with owls, which Muggles do not. Owls have a natural affinity to magic, unlike pigs, which are thoroughly unmagical. Owls have many functions in the wizarding world. Letters, parcels, and howlers are all delivered by owls. \"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Corujas não são criaturas mágicas e são bem conhecidas pelos trouxas, mas bruxos e bruxas têm a habilidade de se comunicar com elas, algo que os trouxas não conseguem. As corujas têm uma afinidade natural com a magia, ao contrário dos porcos, que são totalmente não mágicos. Elas desempenham muitas funções no mundo bruxo — entregam cartas, encomendas e até recados gritando (os “berradores”). \"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -424,30 +424,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 12 #####################################
+##################################### Estado da conversa 12 #####################################
 ################################################################################################
 
 tag @s[scores={convState=12},tag=drawOptions] add use
 tag @s[scores={convState=12},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Cats are sometimes kept as pets of witches and wizards. Students at Hogwarts School of Witchcraft and Wizardry are allowed to bring cats. Cats are also able to interbreed with Kneazles. Some wizards and witches make a living by breeding Kneazles or part-Kneazles. A friend of mine, Arabella Figg, a Squib, makes a living in this manner. \"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Gatos são, às vezes, mantidos como animais de estimação por bruxas e bruxos. Os estudantes de Hogwarts podem trazer gatos consigo. Gatos também podem cruzar com Kneazles. Alguns bruxos e bruxas vivem da criação de Kneazles ou híbridos de Kneazle. Uma amiga minha, Arabella Figg, que é Squib, ganha a vida assim. \"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -455,29 +455,29 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 ################################################################################################
-##################################### Conversation State 13 #####################################
+##################################### Estado da conversa 13 #####################################
 ################################################################################################
 
 tag @s[scores={convState=13},tag=drawOptions] add use
 tag @s[scores={convState=13},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" While rabbits often feature in Muggles' depictions of magic, being removed from hats, rabbits are thoroughly unmagical. That being said, rabbits are still a popular pet amongst witches and wizards. Many wizards' and witches' Patronus charms take the corporeal form of a rabbit. \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Embora coelhos apareçam frequentemente nas representações mágicas dos trouxas, como sendo retirados de cartolas, eles são totalmente não mágicos. Mesmo assim, coelhos continuam sendo pets populares entre bruxos e bruxas. Muitos Patronos de bruxos e bruxas assumem a forma corpórea de coelho. \\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de conversação #####
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -485,30 +485,30 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
 #===============================
 
 ################################################################################################
-##################################### Conversation State 14 #####################################
+##################################### Estado da conversa 14 #####################################
 ################################################################################################
 
 tag @s[scores={convState=14},tag=drawOptions] add use
 tag @s[scores={convState=14},tag=triggerOption,tag=!drawOptions] add trg
 
 ################################
-##### Conversation Header ######
+##### Cabeçalho da conversa ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Rats often serve as pets for wizards and witches. They typically only live for a few years, and are not as popular as owls or cats. The rat's tail is useful in potion brewing. Wild rats in the wizarding world can be rather aggressive, so be careful around them. \\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Ratos costumam ser animais de estimação de bruxos e bruxas. Eles vivem apenas alguns anos e não são tão populares quanto corujas ou gatos. O rabo do rato é útil na preparação de poções. Ratos selvagens no mundo bruxo podem ser bastante agressivos, então cuidado com eles. \\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
-##### Conversation Options #####
+##### Opções de Conversa #######
 ################################
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=1}] run data merge entity @s {CustomName:"{\"text\":\" ... \"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -516,10 +516,10 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=1}] as @s[tag=
 #-------------------------------
 
 #===============================
-# Number of options
+# Número de opções
 scoreboard players set @s[tag=use,tag=!inInventory] convMaxView 1
 #-------------------------------
-# Back conversation state (when player presses shift. -1 is exit conversation)
+# Estado de retorno da conversa (quando o jogador pressiona shift. -1 é sair da conversa)
 scoreboard players set @s[tag=use] backConvState 1
 tag @s remove use
 tag @s remove trg
