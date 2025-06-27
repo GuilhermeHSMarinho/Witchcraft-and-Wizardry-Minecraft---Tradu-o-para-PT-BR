@@ -1,0 +1,1 @@
+Dividi as animações em várias funções para otimizar o desempenho o máximo possível
