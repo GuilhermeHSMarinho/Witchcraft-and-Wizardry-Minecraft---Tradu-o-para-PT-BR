@@ -49,7 +49,7 @@ execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=4}] as @s[tag=
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=5}] run data merge entity @s {CustomName:"{\"text\":\"≤ Conte-me sobre o Beco Diagonal.\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=5}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 4
 #-------------------------------
-execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=6}] run data merge entity @s {CustomName:"{\"text\":\"≤ What can I use a broomstick for?\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
+execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=6}] run data merge entity @s {CustomName:"{\"text\":\"≤ Para que serve uma vassoura?\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
 execute as @s[tag=trg] as @e[type=armor_stand,limit=1,scores={con=6}] as @s[tag=convSelected] as @p[tag=activePlayer,scores={tmp=0}] store success score @s tmp run scoreboard players set @s convState 5
 #-------------------------------
 execute as @s[tag=use] as @e[type=armor_stand,limit=1,scores={con=7}] run data merge entity @s {CustomName:"{\"text\":\"≤ Fale-me sobre o Quadribol\"}",Tags:["_____Normal_____","_____click_____","convOption","i"]}
@@ -81,7 +81,7 @@ tag @s[scores={convState=1},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Ah, the Nimbus 2000. A lovely thing. It's a racing broom produced by the Nimbus Racing Broom Company. At the time of its release it was the fastest broomstick in production, until the Nimbus 2001 took over that title.\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Ah, a Nimbus 2000. Uma maravilha encantadora. É uma vassoura de corrida fabricada pela Nimbus Racing Broom Company. Quando foi lançada, era a vassoura mais rápida em produção — até que a Nimbus 2001 assumiu esse título.\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -112,7 +112,7 @@ tag @s[scores={convState=2},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Yes, the Nimbus 2001. It is a racing broom produced by the Nimbus Racing Broom Company. It is faster than the Nimbus 2000, and though it is not as fast as the Firebolt it is still used by the majority of Quidditch teams across the globe.\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\"  Sim, a Nimbus 2001. É uma vassoura de corrida fabricada pela Nimbus Racing Broom Company. É mais rápida que a Nimbus 2000 e, embora não seja tão veloz quanto a Firebolt, ainda é usada pela maioria dos times de Quadribol ao redor do mundo.\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -143,7 +143,7 @@ tag @s[scores={convState=3},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" The Firebolt, now you're talking. This world-class state-of-the-art racing broom is the fastest in existence. Each individually selected birch twig in the broomtail has been honed to aerodynamic perfection. There isn't a lot of them in existence. I hear it's because the goblin workers involved in the patented ironwork are prone to strikes and walkouts at even the smallest provocation.\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Ah, a Firebolt — agora estamos falando sério. Essa vassoura de corrida de última geração, de nível mundial, é a mais rápida que existe. Cada galho de bétula escolhido individualmente na cauda da vassoura foi moldado até atingir a perfeição aerodinâmica. Não existem muitas por aí. Ouvi dizer que é porque os duendes responsáveis pela forja patenteada do metal são propensos a greves e paralisações ao menor sinal de provocação.\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -174,7 +174,7 @@ tag @s[scores={convState=4},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" There are two quidditch shops in Diagon Alley. We have the largest selection here at Broomstix, but if you're looking for something cheaper, you could visit 2nd Hand Brooms down the street.\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Existem duas lojas de Quadribol no Beco Diagonal. Aqui na Broomstix temos a maior seleção, mas se você estiver procurando algo mais barato, pode visitar a 2nd Hand Brooms ali na mesma rua.\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -205,7 +205,7 @@ tag @s[scores={convState=5},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Broomsticks are a useful way to get around Hogwarts and Hogsmeade, also granting access to some great views. There are also flying tracks scattered around, if you're looking for more of a challenge.\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" As vassouras são um meio prático de se locomover por Hogwarts e Hogsmeade, além de oferecerem vistas incríveis pelo caminho. Também há pistas de voo espalhadas por aí, caso você esteja em busca de um desafio maior.\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -236,7 +236,7 @@ tag @s[scores={convState=6},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" New here, are you? Quidditch is the most popular sport in the wizarding world. It's like Muggles and ... what's it called again? Football?\\n\\n\\n\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Novo por aqui, é? O Quadribol é o esporte mais popular do mundo bruxo. É como o dos trouxas é... como é mesmo o nome? Futebol?\\n\\n\\n\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
@@ -267,7 +267,7 @@ tag @s[scores={convState=7},tag=triggerOption,tag=!drawOptions] add trg
 ################################
 ##### Conversation Header ######
 ################################
-execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" Quidditch is played on broomsticks with two teams, and the object of the game is to score more goals than the opponents. There are four balls in the game; The Golden Snitch, the Quaffle and two Bludgers. Each team has seven players; one Seeker, one Keeper, two Beaters and three Chasers, each with different tasks.\"}"}
+execute if entity @s[tag=use] as 0-0-6-0-9 run data merge entity @s {CustomName:"{\"text\":\" O Quadribol é jogado em vassouras com dois times, e o objetivo do jogo é marcar mais gols que o adversário. Há quatro bolas em jogo: o Pomo de Ouro, a Goles e dois Balaços. Cada equipe tem sete jogadores: um Apanhador, um Goleiro, dois Batedores e três Artilheiros — cada um com funções diferentes.\"}"}
 execute if entity @s[tag=use] run tag @s add longHeader
 
 ################################
